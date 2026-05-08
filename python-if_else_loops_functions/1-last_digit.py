@@ -6,7 +6,7 @@ number = random.randint(-10000, 10000)
 if number > 0:
     remainder = number % 10
 else:
-    remainder = ( -1 * number ) % 10
+    remainder = -(( -1 * number ) % 10)
 
 if remainder > 5:
     compare = "and is greater than 5"
