@@ -2,4 +2,4 @@
 
 
 def number_keys(a_dictionary):
-    return sum([1 for key in dict.keys()])
+    return sum([1 for key in a_dictionary.keys()])
