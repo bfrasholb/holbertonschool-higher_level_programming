@@ -6,3 +6,4 @@ def update_dictionary(a_dictionary, key, value):
         if key == keys:
             a_dictionary[keys] = value
     a_dictionary |= {key: value}
+    return a_dictionary
