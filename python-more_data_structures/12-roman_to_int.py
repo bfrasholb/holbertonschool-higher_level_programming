@@ -12,13 +12,16 @@ def roman_to_int(roman_string):
        not isinstance(roman_string, str) or \
        detect_illegal(roman_string) is True:
         return 0
-    roman_values = {"I": 1,
-                    "V": 5,
-                    "X": 10,
-                    "L": 50,
-                    "C": 100,
-                    "D": 500,
-                    "M": 1000}
+    roman_values = {
+        "I": 1,
+        "V": 5,
+        "X": 10,
+        "L": 50,
+        "C": 100,
+        "D": 500,
+        "M": 1000
+    }
+
     total, prev_sym, sub = 0, "", False
 
     for char in reversed(roman_string):
