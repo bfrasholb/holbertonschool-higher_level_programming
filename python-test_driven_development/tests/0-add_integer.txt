@@ -1,0 +1,40 @@
+Add Integer Module
+==================
+
+This Function adds two integers
+-------------------------------
+
+>>> add_int = __import__('0-add_integer').add_integer
+
+>>> add_int(0, 10)
+10
+
+>>> add_int(-100,10)
+-90
+
+Floats are first Cast to Integers
+---------------------------------
+
+>>> add_int(50,10.4)
+60
+
+>>> add_int(-50,-10.4)
+-60
+
+Default Value of B is 98
+------------------------
+
+>>> add_int(0)
+98
+
+>>> add_int(2)
+100
+
+Type Errors
+-----------
+
+>>> add_int("School", 5)
+'a must be an integer'
+
+>>> add_int(5, "School")
+'b must be an integer'
