@@ -1,0 +1,36 @@
+Divide Matrix Module
+====================
+This module divides each element of a matrix by a number
+
+Importing the Module
+--------------------
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+The matrix used for Testing
+---------------------------
+
+>>> matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0], [2.33, 2.67, 3.0]]
+
+Divided by 0 Error
+------------------
+
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+  File "<python-input-16>", line 1, in <module>
+    matrix_divided(matrix, 0)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/bgtfraser/HS/holbertonschool-higher_level_programming/python-test_driven_development/2-matrix_divided.py", line 8, in matrix_divided
+    new_matrix.append(list(map(lambda x: round(x / div, 2), matrix[i])))
+                      ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bgtfraser/HS/holbertonschool-higher_level_programming/python-test_driven_development/2-matrix_divided.py", line 8, in <lambda>
+    new_matrix.append(list(map(lambda x: round(x / div, 2), matrix[i])))
+                                               ~~^~~~~
+ZeroDivisionError: division by zero
+
+Allows Division by Negative Float
+---------------------------------
+>>> matrix_divided(matrix, -2.5)
+[[-0.4, -0.8, -1.2], [-1.6, -2.0, -2.4], [-2.8, -3.2, -3.6]]
