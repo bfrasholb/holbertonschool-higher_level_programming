@@ -18,6 +18,9 @@ My name is Walter White
 >>> say_my_name("Bob")
 My name is Bob
 
+>>> say_my_name("Bob", "")
+My name is Bob
+
 Invalid first_name type
 -----------------------
 
