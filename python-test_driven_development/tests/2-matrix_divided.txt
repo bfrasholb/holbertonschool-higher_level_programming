@@ -30,3 +30,11 @@ Division by negative float
 
 >>> matrix_divided(matrix, -2.5)
 [[-0.4, -0.8, -1.2], [-1.6, -2.0, -2.4], [-2.8, -3.2, -3.6]]
+
+Invalid div type (string)
+-------------------------
+
+>>> matrix_divided(matrix, "3")
+Traceback (most recent call last):
+...
+TypeError: div must be a number
