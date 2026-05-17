@@ -14,3 +14,35 @@ Invalid input (not string)
 Traceback (most recent call last):
 ...
 TypeError: text must be a string
+
+Valid string
+------------
+
+>>> text_indentation("Hello. How are you? I'm fine:")
+Hello.
+<BLANKLINE>
+How are you?
+<BLANKLINE>
+I'm fine:
+<BLANKLINE>
+
+String with blank lines
+-----------------------
+
+>>> text_indentation("Hello.\n\nHow are you?")
+Hello.
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+How are you?
+<BLANKLINE>
+
+Missing one argument
+--------------------
+
+>>> text_indentation()
+Traceback (most recent call last):
+  File "<python-input-14>", line 1, in <module>
+    text_indentation()
+    ~~~~~~~~~~~~~~~~^^
+TypeError: text_indentation() missing 1 required positional argument: 'text'

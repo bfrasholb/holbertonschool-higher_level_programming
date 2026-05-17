@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Module for Indentation after Certain Chars"""
 
 
 def text_indentation(text):
