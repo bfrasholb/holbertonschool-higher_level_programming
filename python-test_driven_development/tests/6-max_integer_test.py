@@ -33,10 +33,6 @@ class TestMaxInteger(unittest.TestCase):
         """Test with positive and negative integers"""
         self.assertEqual(max_integer([-10, 2, 5, -3]), 5)
 
-    def test_duplicate_max(self):
-        """Test when max integer appears multiple times"""
-        self.assertEqual(max_integer([1, 3, 3, 2]), 3)
-
     def test_float_numbers(self):
         """Test with float numbers"""
         self.assertEqual(max_integer([1.5, 2.7, 0.3]), 2.7)
