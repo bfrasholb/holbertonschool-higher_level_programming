@@ -1,0 +1,16 @@
+Text Indentation Module
+=======================
+This module prints text with indentation after '.', '?' and ':'
+
+Import function
+---------------
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Invalid input (not string)
+--------------------------
+
+>>> text_indentation(12)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
