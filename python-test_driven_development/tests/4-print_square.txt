@@ -50,3 +50,13 @@ Negative size
 Traceback (most recent call last):
 ...
 ValueError: size must be >= 0
+
+Missing One Argument
+--------------------
+
+>>> print_square()
+Traceback (most recent call last):
+  File "<python-input-9>", line 1, in <module>
+    print_square()
+    ~~~~~~~~~~~~^^
+TypeError: print_square() missing 1 required positional argument: 'size'
