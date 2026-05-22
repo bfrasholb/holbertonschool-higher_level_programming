@@ -12,9 +12,8 @@ class Rectangle:
     def __str__(self):
         if not self.height or not self.width:
             return ""
-        str = f"#" * self.width
-        for i in range(1, self.height):
-            str += f"\n" + str
+        rows = f"#" * self.width
+        str = (rows + "\n") * (self.height - 1) + rows
         return str
 
     @property
