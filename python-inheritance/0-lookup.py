@@ -4,4 +4,4 @@
 
 def lookup(obj):
     """Returns Directory"""
-    return dir(object)
+    return dir(obj)
