@@ -8,11 +8,10 @@ class Rectangle(BaseGeometry):
     """A Rectangular Class"""
 
     def __init__(self, width, height):
-        if self.integer_validator("width", width) and self.integer_validator(
-            "height", height
-        ):
-            self.__width = width
-            self.__height = height
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
+        self.__width = width
+        self.__height = height
 
     def __str__(self):
         return f"[Rectangle] {self.__width}/{self.__height}"
