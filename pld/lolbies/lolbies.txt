@@ -1,0 +1,8 @@
+Class of Legends
+================
+This Module is Class practice
+
+Import Function
+---------------
+>>> Map = __import__("map").Map
+>>>
