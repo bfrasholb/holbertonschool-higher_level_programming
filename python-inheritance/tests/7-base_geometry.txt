@@ -13,87 +13,47 @@ Instantiation
 
 Area
 ----
->>> BaseGeometry.area()
+>>> obj.area()
 Traceback (most recent call last):
-  File "<python-input-26>", line 1, in <module>
-    BaseGeometry.area()
-    ~~~~~~~~^^
-  File "/home/bgtfraser/HS/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 9, in area
-    raise Exception("area() is not implemented")
 Exception: area() is not implemented
 
 Integer Validator
 -----------------
->>> BaseGeometry.integer_validator()
+
+>>> obj.integer_validator()
 Traceback (most recent call last):
-  File "<python-input-27>", line 1, in <module>
-    BaseGeometry.integer_validator()
-    ~~~~~~~~~~~~~~~~~~~~~^^
 TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
->>> BaseGeometry.integer_validator("age")
+>>> obj.integer_validator("age")
 Traceback (most recent call last):
-  File "<python-input-28>", line 1, in <module>
-    BaseGeometry.integer_validator("age")
-    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^
 TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
 
->>> BaseGeometry.integer_validator("age", 1)
+>>> obj.integer_validator("age", 1)
 
->>> BaseGeometry.integer_validator("age", 0)
+>>> obj.integer_validator("age", 0)
 Traceback (most recent call last):
-  File "<python-input-30>", line 1, in <module>
-    BaseGeometry.integer_validator("age", 0)
-    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
-  File "/home/bgtfraser/HS/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 15, in integer_validator
-    raise ValueError(f"{name} must be greater than 0")
 ValueError: age must be greater than 0
 
->>> BaseGeometry.integer_validator("age", -4)
+>>> obj.integer_validator("age", -4)
 Traceback (most recent call last):
-  File "<python-input-31>", line 1, in <module>
-    BaseGeometry.integer_validator("age", -4)
-    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
-  File "/home/bgtfraser/HS/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 15, in integer_validator
-    raise ValueError(f"{name} must be greater than 0")
 ValueError: age must be greater than 0
 
->>> BaseGeometry.integer_validator("age", 4)
+>>> obj.integer_validator("age", 4)
 
->>> BaseGeometry.integer_validator("age", (4,))
+>>> obj.integer_validator("age", (4,))
 Traceback (most recent call last):
-  File "<python-input-33>", line 1, in <module>
-    BaseGeometry.integer_validator("age", (4,))
-    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/home/bgtfraser/HS/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 13, in integer_validator
-    raise TypeError(f"{name} must be an integer")
 TypeError: age must be an integer
 
->>> BaseGeometry.integer_validator("age", [3])
+>>> obj.integer_validator("age", [3])
 Traceback (most recent call last):
-  File "<python-input-34>", line 1, in <module>
-    BaseGeometry.integer_validator("age", [3])
-    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
-  File "/home/bgtfraser/HS/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 13, in integer_validator
-    raise TypeError(f"{name} must be an integer")
 TypeError: age must be an integer
 
->>> BaseGeometry.integer_validator("age", True)
+>>> obj.integer_validator("age", True)
 
->>> BaseGeometry.integer_validator("age", [3, 4])
+>>> obj.integer_validator("age", [3, 4])
 Traceback (most recent call last):
-  File "<python-input-36>", line 1, in <module>
-    BaseGeometry.integer_validator("age", [3, 4])
-    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
-  File "/home/bgtfraser/HS/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 13, in integer_validator
-    raise TypeError(f"{name} must be an integer")
 TypeError: age must be an integer
 
->>> BaseGeometry.integer_validator("age", None)
+>>> obj.integer_validator("age", None)
 Traceback (most recent call last):
-  File "<python-input-37>", line 1, in <module>
-    BaseGeometry.integer_validator("age", None)
-    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/home/bgtfraser/HS/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 13, in integer_validator
-    raise TypeError(f"{name} must be an integer")
 TypeError: age must be an integer
