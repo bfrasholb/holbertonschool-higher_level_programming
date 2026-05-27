@@ -32,7 +32,7 @@ class Rectangle(Shape):
         self.__height = height
 
     def area(self):
-        return abs(self.__width) * abs(self.__height)
+        return abs(self.__width * self.__height)
 
     def perimeter(self):
         return 2 * abs(self.__width + self.__height)
