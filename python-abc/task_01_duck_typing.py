@@ -28,8 +28,8 @@ class Circle(Shape):
 
 class Rectangle(Shape):
     def __init__(self, width, height):
-        self.__width = abs(width)
-        self.__height = abs(height)
+        self.__width = width
+        self.__height = height
 
     def area(self):
         return self.__width * self.__height
