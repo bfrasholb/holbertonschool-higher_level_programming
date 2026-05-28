@@ -15,10 +15,11 @@ bard = Summoner("Bard", 600, 400)
 shaco = Summoner("Shaco", 580, 440)
 lulu = Summoner("Lulu", 580, 380)
 
-blue_team = [lucian, warwick, nami, velkoz, caitlin]
-red_team = [garen, renekton, bard, shaco, lulu]
+blue_team = [lucian]
+red_team = [garen]
 
 
 ranked = Map("Summoner's Rift", blue_team, red_team)
 
 print(ranked)
+print(ranked.print_map())
