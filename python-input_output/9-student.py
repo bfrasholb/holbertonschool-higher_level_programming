@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# """Student Class"""
+"""Student Class"""
 
 
 class Student:
