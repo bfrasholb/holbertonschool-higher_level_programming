@@ -9,6 +9,6 @@ stored_data = "add_item.json"
 try:
     my_list = from_json(stored_data)
     my_list += argv[1:]
-except:
+except BaseException:
     my_list = argv[1:]
 to_json(my_list, stored_data)
