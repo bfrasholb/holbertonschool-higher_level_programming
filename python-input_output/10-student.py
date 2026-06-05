@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """Student Class"""
 
-import json
-
 
 class Student:
     """Student Class"""
@@ -17,4 +15,4 @@ class Student:
             filtered_dict = {
                 key: value for key, value in self.__dict__.items() if key in attrs
             }
-            return json.dumps(filtered_dict)
+            return filtered_dict
