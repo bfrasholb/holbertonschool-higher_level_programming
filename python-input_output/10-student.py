@@ -11,8 +11,9 @@ class Student:
         self.age = age
 
     def to_json(self, attrs: list = ["age", "last_name", "first_name"]):
-        if isinstance(attrs, list) and all(isinstance(x, str) for x in sorted(attrs)):
+        if isinstance(attrs, list) and all(isinstance(x, str) for x in attrs):
             filtered_dict = {
-                key: value for key, value in self.__dict__.items() if key in attrs
+                key: value for key, value
+                in self.__dict__.items() if key in attrs
             }
             return filtered_dict
