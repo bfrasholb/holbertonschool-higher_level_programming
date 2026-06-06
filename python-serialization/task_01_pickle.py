@@ -25,12 +25,12 @@ class CustomObject:
             for i in range(len(attr)):
                 attr_name = attr_name[0].upper() + attr_name[1:]
                 if attr_name[i] in "_- ":
-                    attr_name = attr_name[:i] + f" " + attr_name[i + 1 :]
+                    attr_name = attr_name[:i] + f" " + attr_name[i + 1:]
                     if attr_name[i + 1]:
                         attr_name = (
                             attr_name[: i + 1]
                             + attr_name[i + 1].upper()
-                            + attr_name[i + 2 :]
+                            + attr_name[i + 2:]
                         )
             print(f"{attr_name}: {getattr(self, attr)}")
 
