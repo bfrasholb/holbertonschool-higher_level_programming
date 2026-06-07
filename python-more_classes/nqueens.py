@@ -8,7 +8,7 @@ class board:
     print_symbol = "#"
     queen_symbol = "Q"
 
-    def __init__(self, size=0, queens=0):
+    def __init__(self, size=8, queens=0):
         self.size = size
         self.queens = queens
 
@@ -100,11 +100,7 @@ class square:
 
 
 def main():
-    chessboard = board(8)
-    print(f"There is a board, with size: {chessboard.size} and squares:")
-
-    for square in chessboard.squares:
-        print(f"{square}\n")
+    chessboard = board()
 
 
 if __name__ == "__main__":

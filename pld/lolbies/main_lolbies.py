@@ -22,4 +22,3 @@ red_team = [garen]
 ranked = Map("Summoner's Rift", blue_team, red_team)
 
 print(ranked)
-print(ranked.print_map())
