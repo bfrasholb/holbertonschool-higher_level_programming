@@ -23,6 +23,6 @@ def fetch_and_save_posts():
             "title"), "body": post.get("body")} for post in data]
 
         with open("posts.csv", mode="w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(file, fieldnames=["id", "title", "body"])
+            writer = csv.DictWriter(f, fieldnames=["id", "title", "body"])
             writer.writeheader()
             writer.writerows(posts_list)
