@@ -10,11 +10,11 @@ def search_states(username: str, password: str, database, state: str):
     db = MySQLdb.connect(host='127.0.0.1', port=3306,
                          user=username, passwd=password, db=database)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    cur.execute(
+        "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(state))
     rows = cur.fetchall()
     for row in rows:
-        if row[1] == state:
-            print(row)
+        print(row)
     cur.close()
     db.close()
 
