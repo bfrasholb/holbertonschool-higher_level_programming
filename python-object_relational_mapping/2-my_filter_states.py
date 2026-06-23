@@ -11,7 +11,7 @@ def search_states(username: str, password: str, database, state: str):
                          user=username, passwd=password, db=database)
     cur = db.cursor()
     cur.execute(
-        "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(state))
+        "SELECT * FROM states WHERE name = '%s' ORDER BY id ASC" % (state,))
     rows = cur.fetchall()
     for row in rows:
         print(row)
