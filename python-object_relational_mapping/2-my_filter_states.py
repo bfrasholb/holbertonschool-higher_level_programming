@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-'''Filter states by name'''
+"""Filter states by name"""
+
 
 import MySQLdb
 from sys import argv
 
 
 def filter_states(username, password, database, state):
-    '''Function to filter States'''
+    """Function to filter States"""
     db = MySQLdb.connect(host='localhost', port=3306,
                          user=username, passwd=password, db=database)
     cur = db.cursor()
