@@ -1,17 +1,17 @@
 #!/usr/bin/python3
-'''Search states by name'''
+'''Filter states by name'''
 
 import MySQLdb
 from sys import argv
 
 
-def search_states(username, password, database, state):
-    '''Function to search States'''
+def filter_states(username, password, database, state):
+    '''Function to filter States'''
     db = MySQLdb.connect(host='127.0.0.1', port=3306,
                          user=username, passwd=password, db=database)
     cur = db.cursor()
     cur.execute(
-        "SELECT * FROM states WHERE name LIKE '{}%' ORDER BY id ASC".format(state))
+        "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(state))
     rows = cur.fetchall()
     for row in rows:
         print(row)
@@ -20,4 +20,4 @@ def search_states(username, password, database, state):
 
 
 if __name__ == "__main__":
-    search_states(argv[1], argv[2], argv[3], argv[4])
+    filter_states(argv[1], argv[2], argv[3], argv[4])
