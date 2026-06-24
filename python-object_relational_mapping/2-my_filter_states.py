@@ -8,7 +8,7 @@ from sys import argv
 def filter_states():
     """Function to filter States"""
     db = MySQLdb.connect(host='localhost', port=3306,
-                         user=argv, passwd=argv, db=argv)
+                         user=argv[1], passwd=argv[2], db=argv[3])
     cur = db.cursor()
     cur.execute(
         "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id ASC"
