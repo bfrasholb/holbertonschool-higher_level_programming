@@ -17,7 +17,7 @@ def list_cities(username, password, database):
     cur = db.cursor()
 
     cur.execute("""
-        SELECT cities.name, states.name
+        SELECT cities.id, cities.name, states.name
         FROM cities
         JOIN states ON cities.state_id = states.id
         ORDER BY cities.id ASC
@@ -26,7 +26,7 @@ def list_cities(username, password, database):
     rows = cur.fetchall()
 
     for row in rows:
-        print("{} {}".format(row[0], row[1]))
+        print("{} {} {}".format(row[0], row[1], row[2]))
 
     cur.close()
     db.close()
