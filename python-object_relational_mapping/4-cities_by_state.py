@@ -6,7 +6,6 @@ from sys import argv
 
 
 def list_cities(username, password, database):
-    """Function that lists cities by state"""
     db = MySQLdb.connect(
         host="127.0.0.1",
         port=3306,
@@ -17,17 +16,17 @@ def list_cities(username, password, database):
 
     cur = db.cursor()
 
-    # ONE execute() only + JOIN states and cities
     cur.execute("""
-        SELECT cities.id, cities.name, states.name
+        SELECT cities.name, states.name
         FROM cities
         JOIN states ON cities.state_id = states.id
         ORDER BY cities.id ASC
     """)
 
     rows = cur.fetchall()
+
     for row in rows:
-        print("{} {} {}".format(row[0], row[1], row[2]))
+        print("{} {}".format(row[0], row[1]))
 
     cur.close()
     db.close()
