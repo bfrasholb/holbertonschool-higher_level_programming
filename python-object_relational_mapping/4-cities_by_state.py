@@ -7,28 +7,29 @@ from sys import argv
 
 def list_cities(username, password, database):
     db = MySQLdb.connect(
-        host="127.0.0.1",
+        host="localhost",
         port=3306,
-        user=username,
-        passwd=password,
-        db=database
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3]
     )
 
-    cur = db.cursor()
+    cursor = db.cursor()
 
-    cur.execute("""
-        SELECT cities.id, cities.name, states.name
-        FROM cities
-        JOIN states ON cities.state_id = states.id
-        ORDER BY cities.id ASC
-    """)
+    cursor.execute(
+        "SELECT cities.id, cities.name, states.name "
+        "FROM cities "
+        "INNER JOIN states "
+        "ON cities.state_id = states.id "
+        "ORDER BY cities.id ASC"
+    )
 
-    rows = cur.fetchall()
+    rows = cursor.fetchall()
 
     for row in rows:
         print(row)
 
-    cur.close()
+    cursor.close()
     db.close()
 
 
