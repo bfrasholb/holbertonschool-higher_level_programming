@@ -17,7 +17,6 @@ def filter_cities(username, password, database, state_name):
 
     cur = db.cursor()
 
-    # SAFE + ONE execute() + JOIN + filter by state name
     cur.execute("""
         SELECT cities.name
         FROM cities
@@ -28,8 +27,8 @@ def filter_cities(username, password, database, state_name):
 
     rows = cur.fetchall()
 
-    # format output like: "Dallas, Houston, Austin"
-    print(", ".join(city[0] for city in rows))
+    if rows:
+        print(", ".join(city[0] for city in rows))
 
     cur.close()
     db.close()
