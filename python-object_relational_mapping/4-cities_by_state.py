@@ -26,7 +26,7 @@ def list_cities(username, password, database):
     rows = cur.fetchall()
 
     for row in rows:
-        print("{} {} {}".format(row[0], row[1], row[2]))
+        print(row)
 
     cur.close()
     db.close()
