@@ -5,9 +5,9 @@ import MySQLdb
 from sys import argv
 
 
-def list_cities(username, password, database):
+def list_cities(username, password, database, state):
     db = MySQLdb.connect(
-        host="localhost",
+        host="127.0.0.1",
         port=3306,
         user=username,
         passwd=password,
@@ -17,22 +17,24 @@ def list_cities(username, password, database):
     cursor = db.cursor()
 
     cursor.execute(
-        "SELECT cities.id, cities.name, states.name "
-        "FROM cities "
-        "INNER JOIN states "
-        "ON cities.state_id = states.id "
-        "ORDER BY cities.id ASC"
-    )
+        "SELECT name FROM cities "
+        "WHERE state_id like "
+        "(SELECT id FROM states WHERE name = %s)"
+        " ORDER BY cities.id ASC;",
+        (state,))
 
     rows = cursor.fetchall()
 
+    res = []
+
     for row in rows:
-        print(row)
+        if row not in rows[:-1]:
+            print(row[0])
+        print(row[0], end=", ")
 
     cursor.close()
     db.close()
 
 
 if __name__ == "__main__":
-    if len(argv) == 4:
-        list_cities(argv[1], argv[2], argv[3])
+    list_cities(argv[1], argv[2], argv[3], argv[4])
