@@ -25,12 +25,12 @@ def list_cities(username, password, database, state):
 
     rows = cursor.fetchall()
 
-    res = []
+    res = ""
 
     for row in rows:
-        if row not in rows[:-1]:
-            print(row[0])
-        print(row[0], end=", ")
+        res += f"{row[0]}, "
+
+    print(res[:-2])
 
     cursor.close()
     db.close()

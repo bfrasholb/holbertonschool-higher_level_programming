@@ -7,7 +7,7 @@ from sys import argv
 
 def filter_states(username: str, password: str, database):
     '''Function to get States'''
-    db = MySQLdb.connect(host='127.0.0.1', port=3306,
+    db = MySQLdb.connect(host='Localhost', port=3306,
                          user=username, passwd=password, db=database)
     cur = db.cursor()
     cur.execute("SELECT * FROM states ORDER BY id ASC")
