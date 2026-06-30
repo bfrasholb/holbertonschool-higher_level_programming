@@ -8,7 +8,7 @@ from sys import argv
 
 def filter_states(username, password, database, state):
     """Function to filter States"""
-    db = MySQLdb.connect(host='127.0.0.1', port=3306,
+    db = MySQLdb.connect(host='localhost', port=3306,
                          user=username, passwd=password, db=database)
     cur = db.cursor()
     cur.execute(
