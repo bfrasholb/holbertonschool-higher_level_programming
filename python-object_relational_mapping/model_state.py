@@ -2,11 +2,10 @@
 """Module for Base and State Class"""
 
 from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import DeclarativeBase
+from sqlalchemy.ext.declarative import declarative_base
 
 
-class Base(DeclarativeBase):
-    pass
+Base = declarative_base()
 
 
 class State(Base):
