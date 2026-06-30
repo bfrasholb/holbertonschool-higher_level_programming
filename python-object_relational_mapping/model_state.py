@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Module for Base and State Class"""
 
-from sqlalchemy import Column, integer, string
-from sqlalchemy.orm import DeclarativeBase
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.ext.declarative import DeclarativeBase
 
 
 class Base(DeclarativeBase):
@@ -10,5 +10,6 @@ class Base(DeclarativeBase):
 
 
 class State(Base):
-    id = Column(integer, primarykey=True, autoincrement=True)
-    name = Column(string(128), nullable=False)
+    __tablename__ = "states"
+    id = Column(Integer, primarykey=True, autoincrement=True)
+    name = Column(String(128), nullable=False)
