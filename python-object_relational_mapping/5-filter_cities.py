@@ -1,17 +1,17 @@
 #!/usr/bin/python3
-"""Lists all cities from the database."""
+"""Lists all cities with their states"""
 
 import MySQLdb
-import sys
+from sys import argv
 
 
-if __name__ == "__main__":
+def list_cities(username, password, database):
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=sys.argv[1],
-        passwd=sys.argv[2],
-        db=sys.argv[3]
+        user=username,
+        passwd=password,
+        db=database
     )
 
     cursor = db.cursor()
@@ -31,3 +31,8 @@ if __name__ == "__main__":
 
     cursor.close()
     db.close()
+
+
+if __name__ == "__main__":
+    if len(argv) == 4:
+        list_cities(argv[1], argv[2], argv[3])
