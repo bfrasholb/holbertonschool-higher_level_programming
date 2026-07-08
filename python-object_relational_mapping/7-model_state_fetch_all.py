@@ -9,7 +9,7 @@ from sqlalchemy.orm import sessionmaker
 
 def print_states(username, password, database):
     """Prints the state objects in database"""
-    engine = create_engine('mysql://{}:{}@localhost/{}'.format(
+    engine = create_engine('mysql://{}:{}@Localhost/{}'.format(
         username, password, database
     ), pool_pre_ping=True)
     Base.metadata.create_all(engine)
@@ -25,5 +25,5 @@ def print_states(username, password, database):
     session.close()
 
 
-if name == '__main__':
+if __name__ == "__main__":
     print_states(argv[0], argv[1], argv[2])
