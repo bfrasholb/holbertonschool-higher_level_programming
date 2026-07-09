@@ -3,17 +3,18 @@
 let i = 0;
 let j = 0;
 let row = ''
-const size = process.argv.slice(2);
+const size = parseInt(process.argv.slice(2), 10);
 
-if (size === undefined) {
-    console.log('Missing size');
+if (size) {
+    while (i < size) {
+        while (j < size) {
+            row += 'X'
+            j += 1;
+        }
+        console.log(row)
+        i += 1
+    }
     return 0;
 }
-while (i < size) {
-    while (j < size) {
-        row += 'X'
-        j += 1;
-    }
-    console.log(row)
-    i += 1
-}
+
+console.log('Missing size')
