@@ -11,7 +11,7 @@ if (size === undefined) {
 }
 while (i < size) {
     while (j < size) {
-        row += '#'
+        row += 'X'
         j += 1;
     }
     console.log(row)
