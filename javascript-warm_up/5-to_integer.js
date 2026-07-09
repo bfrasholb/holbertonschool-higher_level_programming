@@ -1,5 +1,6 @@
 #!/usr/bin/node
 
 const args = process.argv.slice(2);
-if (args[0]) if (parseInt(args[0], 10)) console.log('My number: ', args[0])
+my_number = parseInt(args[0], 10)
+if (my_number) console.log('My number:', my_number)
 else console.log('Not a number')
