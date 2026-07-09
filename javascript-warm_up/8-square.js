@@ -2,19 +2,18 @@
 
 let i = 0;
 let j = 0;
-let row = ''
+let row = '';
 const size = parseInt(process.argv.slice(2), 10);
 
 if (size) {
-    while (i < size) {
-        while (j < size) {
-            row += 'X'
-            j += 1;
-        }
-        console.log(row)
-        i += 1
+  while (i < size) {
+    while (j < size) {
+      row += 'X';
+      j += 1;
     }
-    return 0;
+    console.log(row);
+    i += 1;
+  }
+} else {
+  console.log('Missing size');
 }
-
-console.log('Missing size')
