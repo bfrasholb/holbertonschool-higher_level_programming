@@ -4,7 +4,7 @@ function add (...args) {
   let result = 0;
   if (args.length > 0) {
     let i = 0;
-    while (args[i]) {
+    while (i < args.length) {
       result += args[i];
       i += 1;
     }
@@ -12,4 +12,6 @@ function add (...args) {
   return result;
 }
 
-module.exports = add;
+module.exports = {
+  add
+};
