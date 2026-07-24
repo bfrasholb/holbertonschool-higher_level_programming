@@ -6,6 +6,7 @@ from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
+
 def print_first(username, password, database):
     """Prints the first state object from the database"""
     engine = create_engine('mysql://{}:{}@Localhost/{}'.format(
