@@ -2,7 +2,7 @@
 
 const args = process.argv.slice(2).map(Number);
 
-function second_best (args) {
+function SecondBest (args) {
   const result = 0;
   if (args.length === 0 || args.length === 1) {
     return result;
@@ -11,4 +11,4 @@ function second_best (args) {
   }
 }
 
-console.log(second_best(args));
+console.log(SecondBest(args));
