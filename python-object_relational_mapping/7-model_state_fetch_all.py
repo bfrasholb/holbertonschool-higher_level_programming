@@ -14,7 +14,7 @@ def print_states(username, password, database):
     ), pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
-    Session = sessionamker(bind=engine)
+    Session = sessionmaker(bind=engine)
     session = Session()
 
     states = session.query(State).order_by(State.id).all()
@@ -26,4 +26,4 @@ def print_states(username, password, database):
 
 
 if __name__ == "__main__":
-    print_states(argv[0], argv[1], argv[2])
+    print_states(argv[1], argv[2], argv[3])
