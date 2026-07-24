@@ -21,7 +21,7 @@ def print_first(username, password, database):
     if states:
         print("{}: {}".format(states.id, states.name))
     else:
-        print("Nothing\n")
+        print("Nothing")
 
     session.close()
 
