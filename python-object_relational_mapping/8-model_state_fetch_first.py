@@ -9,7 +9,7 @@ from sqlalchemy.orm import sessionmaker
 
 def print_first(username, password, database):
     """Prints the first state object from the database"""
-    engine = create_engine('mysql://{}:{}@Localhost:3306/{}'.format(
+    engine = create_engine('mysql://{}:{}@Localhost/{}'.format(
         username, password, database
     ), pool_pre_ping=True)
     Base.metadata.create_all(engine)
