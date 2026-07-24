@@ -18,8 +18,10 @@ def print_first(username, password, database):
     session = Session()
 
     states = session.query(State).order_by(State.id).first()
-
-    print("{}: {}".format(states.id, states.name))
+    if states:
+        print("{}: {}".format(states.id, states.name))
+    else:
+        print("Nothing\n")
 
     session.close()
 
