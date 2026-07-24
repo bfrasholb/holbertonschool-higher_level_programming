@@ -1,14 +1,13 @@
 #!/usr/bin/node
 
-export function add(...args) {
-	let result = 0;
-	if (args.length === 0) {
-	} else {
-		let i = 0;
-		while (args[i]) {
-			result += args[i];
-			i += 1;
-		}
-	}
-	return result;
+export function add (...args) {
+  let result = 0;
+  if (args.length > 0) {
+    let i = 0;
+    while (args[i]) {
+      result += args[i];
+      i += 1;
+    }
+  }
+  return result;
 }
