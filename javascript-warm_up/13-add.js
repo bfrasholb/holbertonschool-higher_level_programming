@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-export function add (...args) {
+function add (...args) {
   let result = 0;
   if (args.length > 0) {
     let i = 0;
@@ -11,3 +11,5 @@ export function add (...args) {
   }
   return result;
 }
+
+module.exports = add;
