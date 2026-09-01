@@ -37,11 +37,11 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
-            """Gets hyper index and survives entry removal"""
-            assert isinstance(index, int) and index >= 0
-            data = self.dataset()[index:index + page_size - 1]
-            next_index = index + page_size
-            return {"index": index,
-                    "next_index": next_index,
-                    "page_size": page_size,
-                    "data": data}
+        """Gets hyper index and survives entry removal"""
+        assert isinstance(index, int) and index >= 0
+        data = self.dataset()[index:index + page_size - 1]
+        next_index = index + page_size
+        return {"index": index,
+                "next_index": next_index,
+                "page_size": page_size,
+                "data": data}
