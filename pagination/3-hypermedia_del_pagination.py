@@ -40,7 +40,9 @@ class Server:
         """Gets hyper index and survives entry removal"""
         assert isinstance(index, int) and index >= 0
         next_index = index + page_size
-        data = [self.indexed_dataset()[i] for i in range(index, index + page_size) if i in self.indexed_dataset()]
+        data = [self.indexed_dataset()[i]
+                for i in range(index, index + page_size)
+                if i in self.indexed_dataset()]
         return {"index": index,
                 "data": data,
                 "page_size": page_size,
