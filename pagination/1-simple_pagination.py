@@ -26,10 +26,11 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-            assert isinstance(page, int) and isinstance(page_size, int)
-            assert page > 0 and page_size > 0, "Arguments must be integers greater than 0"
-            indices = index_range(page, page_size)
-            return self.dataset()[indices[0] : indices[1]]
+        """Class method to fetch the page results"""
+        assert isinstance(page, int) and isinstance(page_size, int)
+        assert page > 0 and page_size > 0, "Arguments must be integers greater than 0"
+        indices = index_range(page, page_size)
+        return self.dataset()[indices[0] : indices[1]]
 
 def index_range(page: int, page_size: int) -> tuple:
     """Function that returns indices of page"""
