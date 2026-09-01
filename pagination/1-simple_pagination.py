@@ -29,8 +29,8 @@ class Server:
         """Class method to fetch the page results"""
         assert isinstance(page, int) and isinstance(page_size, int)
         assert page > 0 and page_size > 0
-        indices = index_range(page, page_size)
-        return self.dataset()[indices[0] : indices[1]]
+        start, end = index_range(page, page_size)
+        return self.dataset()[start:end]
 
 def index_range(page: int, page_size: int) -> tuple:
     """Function that returns indices of page"""
