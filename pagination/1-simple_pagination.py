@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 """Pagination Module"""
-
-
 import csv
 import math
 from typing import List
@@ -31,6 +29,7 @@ class Server:
         assert (page > 0 and page_size > 0)
         start, end = index_range(page, page_size)
         return self.dataset()[start:end]
+
 
 def index_range(page: int, page_size: int) -> tuple[int, int]:
     """Function that returns indices of page"""
