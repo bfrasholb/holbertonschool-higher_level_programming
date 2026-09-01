@@ -38,8 +38,8 @@ class Server:
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """Gets hyper index and survives entry removal"""
-        assert isinstance(index, int) and index >= 0
-        data = self.dataset()[index:index + page_size - 1]
+        assert isinstance(index, int) and index >= 0 and index <= len(self.dataset()) / page_size
+        data = self.dataset()[index:index + page_size]
         next_index = index + page_size
         return {"index": index,
                 "data": data,
