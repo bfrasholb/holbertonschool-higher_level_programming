@@ -5,7 +5,7 @@ Deletion-resilient hypermedia pagination
 
 import csv
 import math
-from typing import List
+from typing import List, Dict
 
 
 class Server:
@@ -38,8 +38,8 @@ class Server:
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """Gets hyper index and survives entry removal"""
-        assert isinstance(index, int) and index >= 0 and index <= len(self.dataset()) / page_size
-        next_index = index + page_size + 1
+        assert isinstance(index, int) and index >= 0 and index <= len(self.indexed_dataset()) / page_size
+        next_index = index + page_size
         data = [self.indexed_dataset()[i] for i in range(index, index + page_size) if i in self.indexed_dataset()]
         return {"index": index,
                 "data": data,
