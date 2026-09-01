@@ -32,6 +32,6 @@ class Server:
         start, end = index_range(page, page_size)
         return self.dataset()[start:end]
 
-def index_range(page: int, page_size: int) -> tuple[int, int]:
+def index_range(page: int, page_size: int) -> tuple:
     """Function that returns indices of page"""
     return (page - 1) * page_size, page * page_size
